@@ -16,9 +16,9 @@ public class MainController {
 
     @GetMapping("/str")
 
-    public ResponseEntity<String> getCountCharsToString(@RequestHeader(value = "str") @NotEmpty String str){
+    public ResponseEntity<String> getCountCharsToString(@RequestParam @NotEmpty String str){
         String string = mainService.getCountCharsToString(str);
-        return ResponseEntity.ok().body("Количество элементов строки: "+string);
+        return ResponseEntity.ok().body(string);
     }
 
 }

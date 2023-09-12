@@ -25,7 +25,7 @@ public class Test {
     @Autowired
     private MockMvc mockMvc;
 
-    private static final String header = "str";
+    private static final String query = "str";
 
     @org.junit.Test
     @AutoConfigureMockMvc
@@ -39,7 +39,7 @@ public class Test {
     @org.junit.Test
     public void controllerTest() throws Exception {
         var request = MockMvcRequestBuilders.get("/str")
-                .header(header, "aaaaabbcad");
+                .queryParam(query, "aaaaabbcad");
 
         mockMvc.perform(request)
                 .andExpect(MockMvcResultMatchers.status().isOk());

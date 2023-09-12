@@ -1,0 +1,23 @@
+openapi: 3.0.0
+info:
+  title: CounterService API
+  description: CounterService API
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8080/'
+    description: local server
+paths:
+  /str:
+    get:
+      description: countChars
+      parameters:
+        - name: str
+          in: query
+          schema:
+            type: string
+          description: count chars from string
+      responses:
+        '200':
+          description: Success deleted
+          content:
+            type: string
